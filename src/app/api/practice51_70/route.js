@@ -6,6 +6,7 @@ import { CountryModel } from "@/dbmodels/countryModel"
 import { GradeModel } from "@/dbmodels/gradeModel"
 import { RestaurantModel } from "@/dbmodels/restaurantsModel"
 import { skip } from "node:test";
+import { Query51, Query52 } from "../../../utills/quaries/practice51_70";
 
 
 
@@ -22,18 +23,9 @@ export async function POST(request, response) {
     let query = {}
 
     if (que == 51) {
-      query = [{
-        $unwind: "$grades"
-      },
-      {
-        $group: {
-          _id: "$name",
-          avgScore: {
-            $avg: "$grades.score"
-          }
-        }
-      }]
-
+      query = Query51
+    } else if (que == 52) {
+      query = Query52
     } else {
       data = {}
       count = 0
