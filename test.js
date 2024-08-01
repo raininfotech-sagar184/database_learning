@@ -1,4 +1,4 @@
-echo "# database_learning" >> README.md
+// echo "# database_learning" >> README.md
 git init
 git add README.md
 git commit - m "first commit"
